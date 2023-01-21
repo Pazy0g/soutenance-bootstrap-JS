@@ -97,3 +97,18 @@ h4{
 .cardbord{
     border-top: 5px solid #c4c4c4;
 }
+
+.h3article{
+    font-weight: bold;
+}
+
+
+.groupe a{
+    text-decoration: none;
+    color: black;
+}
+
+#icon{
+    font-size: 2rem;
+    color: blueviolet;
+}
