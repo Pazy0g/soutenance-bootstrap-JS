@@ -110,3 +110,7 @@ h4{
 #date{
     font-size: 0.8rem;
 }
+
+#submitButton{
+    display:none;
+}
