@@ -6,7 +6,41 @@ let description = document.getElementById('description1');
 let description2 = document.getElementById('description2');
 let description3 = document.getElementById('description3');
 let image1 = document.getElementById('imgdom');
+let h5News1 = document.getElementById('montitre1');
+let NewP1 = document.getElementById('MyNewP');
+let NewAuthor = document.getElementById('MyNewAutor');
 const bouton1 = document.querySelector('#bouton1');
+let h5News2 = document.getElementById('montitre2')
+let NewP2 = document.getElementById('MyNewP2')
+let NewAuthor2 = document.getElementById('MyNewAutor2')
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function(){
+        fetch('https://www.tbads.eu/greta/kercode/ajax/?article=1')
+        .then(response => response.json())
+        .then(data => {
+                h5News1.innerHTML= data.title;
+                NewP1.innerHTML= `Date : ${data.date.day} ${data.date.month} ${data.date.year}`
+                NewAuthor.innerHTML= `Auteur : ${data.author.name} ${data.author.surname} ${data.author.position}`
+        });
+});
+
+document.addEventListener('DOMContentLoaded', function(){
+        fetch('https://www.tbads.eu/greta/kercode/ajax/?article=2')
+        .then(response => response.json())
+        .then(data => {
+                h5News2.innerHTML= data.title;
+                NewP2.innerHTML= `Date : ${data.date.day} ${data.date.month} ${data.date.year}`
+                NewAuthor2.innerHTML= `Auteur : ${data.author.name} ${data.author.surname} ${data.author.position}`
+        });
+});
+
+        
 
 
 
@@ -48,36 +82,27 @@ bouton2.addEventListener('click', function(){
 });
 
 // Repeating for each
-const bouton3 = document.querySelector('#bouton3');
-bouton3.addEventListener('click', function(){
-    fetch('https://www.tbads.eu/greta/kercode/ajax/?article=3')
-        .then(response => response.json())
-        .then(data => {
-                titre.innerHTML = data.title
-                date.innerHTML = `${data.date.day} ${data.date.month} ${data.date.year}`;
-                description.innerHTML = data.content[0];
-                description2.innerHTML = data.content[1];
-                image1.src = data.picture;
-                image1.innerHTML
 
-                titleNwStyle();
-                
-        });
         
-});
 
+let italics = document.getElementById('date')
 // Style changing function
 function titleNwStyle(){
         // Changing css dynamicly
         titre.style.color="red"
-        
+        titre.style.fontSize="1.5rem";
         titre.onmouseover = function(){
                 this.style.color="blue"
                 this.style.cursor="pointer"
+                
         }
         titre.onmouseout = function(){
                 this.style.color="red"
         }
+
+        
+
+
 
         image1.style.border="thick solid grey"
 }
@@ -127,6 +152,7 @@ acceptance.addEventListener("change", function() {
         }
          if (this.checked === true){
                 submit.style.display="block";
+                submit.style.display
         }
 
         if(this.checked === false){
