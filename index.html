@@ -89,8 +89,8 @@
 
             </div>
 
-            <section class="row-cols-sm-2 row-cols-md-4 row pb-5">
-              <div class=" px-2 " style="width:200px">
+            <section class="row-cols-sm-6 row-cols-md-4 row pb-5">
+              <div class=" px-2 "  test">
                 <div class="card-body cardcolor">
                   <h4 class="card-title text-center">CHAMBRES</h4>
                   <img class="card-img-bottom" src="images/vignette-chambre.jpg" alt="Card image">
@@ -134,19 +134,25 @@
               </div>
               <div class="" style="width:100%">
                 <div class="card-body cardcolor">
-                  <h5 class="card-title" id="title1"></h5>
-                  <p class="card-text">
+                  <h5 class="card-title" id="title1">Ma maison, mon équilibre</h5>
+                  <p id="date">date: 26 décembre 2022</p>
+                  <p class="card-text" id="date">
+                    Auteur: Dupont Julie
                   </p>
-                  <a href="#" id="bouton1" class="btn btn-outline-secondary">+ D'INFOS</a>
+                  <p id="date">Mots clefs: Nouvelle collection 2023 Tendance</p>
+                  <a href="#" id="bouton1" class="btn btn-outline-secondary" data-toggle="modal" data-target="#myModal2">+ D'INFOS</a>
                 </div>
               </div>
 
               <div class="" style="width:100%">
                 <div class="card-body cardcolor cardbord">
-                  <h5 class="card-title"></h5>
-                  <p class="card-text">
+                  <h5 class="card-title">C'est parti pour les soldes</h5>
+                  <p class="card-text" id="date">
+                    Date: 11 Janvier 2023
                   </p>
-                  <a href="#" class="btn btn-outline-secondary">+ D'INFOS</a>
+                  <p class="card-text" id="date">Auteur : Kergroaz Erwan</p>
+                  <p class="card-text" id="date">Mots clefs: Prix, Soldes, Bonnes affaires</p>
+                  <a href="#" id="bouton2" data-toggle="modal" data-target="#myModal2" class="btn btn-outline-secondary">+ D'INFOS</a>
                 </div>
               </div>
 
@@ -165,7 +171,7 @@
                 Découvrez notre sélection d'objets ludiques et insolites et faites le plein d'idées !
               </p>
 
-              <a href="#" class="btn btn-outline-secondary">+ D'INFOS</a>
+              <a href="#" id="bouton3" data-toggle="modal" data-target="#myModal2" class="btn btn-outline-secondary">+ D'INFOS</a>
 
             </article>
             </section>
@@ -216,7 +222,41 @@
 
 
 
+<!-- Button to Open the Modal -->
 
+
+<!-- The Modal -->
+<div class="modal fade" id="myModal2">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title" id="titre1"></h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body" id="modalAdd">
+        <p id="date1"></p>
+        <p id="auth2"></p>
+        <p id="description1"></p>
+        <p id="description2"></p>
+        <p id="description3"></p>
+        <p id="description4"></p>
+        <figure class="w-25">
+          <img src="" id="imgdom" width="470" alt="">
+        </figure>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 
     </main>
     <footer class="container">
