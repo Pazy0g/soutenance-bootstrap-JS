@@ -18,86 +18,176 @@ let NewAuthor2 = document.getElementById('MyNewAutor2')
 
 
 
+                        //CODE NON FACTORISER
 
-
-document.addEventListener('DOMContentLoaded', function(){
-        fetch('https://www.tbads.eu/greta/kercode/ajax/?article=1')
-        .then(response => response.json())
-        .then(data => {
-                h5News1.innerHTML= data.title;
-                NewP1.innerHTML= `Date : ${data.date.day} ${data.date.month} ${data.date.year}`;
-                NewAuthor.innerHTML= `Auteur : ${data.author.name} ${data.author.surname} ${data.author.position}`;
-        })
-        .catch(error => {
-                console.log(error);
+// document.addEventListener('DOMContentLoaded', function(){
+//         fetch('https://www.tbads.eu/greta/kercode/ajax/?article=1')
+//         .then(response => response.json())
+//         .then(data => {
+//                 h5News1.innerHTML= data.title;
+//                 NewP1.innerHTML= `Date : ${data.date.day} ${data.date.month} ${data.date.year}`;
+//                 NewAuthor.innerHTML= `Auteur : ${data.author.name} ${data.author.surname} ${data.author.position}`;
+//         })
+//         .catch(error => {
+//                 console.log(error);
                 
-                });
+//                 });
        
-});
+// });
 
-document.addEventListener('DOMContentLoaded', function(){
-        fetch('https://www.tbads.eu/greta/kercode/ajax/?article=2')
-        .then(response => response.json())
-        .then(data => {
-                h5News2.innerHTML= data.title;
-                NewP2.innerHTML= `Date : ${data.date.day} ${data.date.month} ${data.date.year}`
-                NewAuthor2.innerHTML= `Auteur : ${data.author.name} ${data.author.surname} ${data.author.position}`
-        })
-        .catch(error => {
-                console.log(error);
+// document.addEventListener('DOMContentLoaded', function(){
+//         fetch('https://www.tbads.eu/greta/kercode/ajax/?article=2')
+//         .then(response => response.json())
+//         .then(data => {
+//                 h5News2.innerHTML= data.title;
+//                 NewP2.innerHTML= `Date : ${data.date.day} ${data.date.month} ${data.date.year}`
+//                 NewAuthor2.innerHTML= `Auteur : ${data.author.name} ${data.author.surname} ${data.author.position}`
+//         })
+//         .catch(error => {
+//                 console.log(error);
                 
-                });
-});
+//                 });
+// });
 
         
 
 
 
-// Creating EventListener function using fetch
-bouton1.addEventListener('click', function(){
-    fetch('https://www.tbads.eu/greta/kercode/ajax/?article=1')
-        .then(response => response.json())
-        .then(data => {
+// // Creating EventListener function using fetch
+// bouton1.addEventListener('click', function(){
+//     fetch('https://www.tbads.eu/greta/kercode/ajax/?article=1')
+//         .then(response => response.json())
+//         .then(data => {
                 
-                titre.innerHTML = data.title
-                date.innerHTML = `${data.date.day} ${data.date.month} ${data.date.year}`;
-                description.innerHTML = data.content[0];
-                description2.innerHTML = data.content[1];
-                description3.innerHTML = data.content[2];
-                image1.src = data.picture;
-                image1.innerHTML 
-                titleNwStyle();
-        })
-        .catch(error => {
-                console.log(error);
+//                 titre.innerHTML = data.title
+//                 date.innerHTML = `${data.date.day} ${data.date.month} ${data.date.year}`;
+//                 description.innerHTML = data.content[0];
+//                 description2.innerHTML = data.content[1];
+//                 description3.innerHTML = data.content[2];
+//                 image1.src = data.picture;
+//                 image1.innerHTML 
+//                 titleNwStyle();
+//         })
+//         .catch(error => {
+//                 console.log(error);
                 
-                });
-});
+//                 });
+// });
 
-// Repeating for each
-const bouton2 = document.querySelector('#bouton2');
-bouton2.addEventListener('click', function(){
-    fetch('https://www.tbads.eu/greta/kercode/ajax/?article=2')
-        .then(response => response.json())
-        .then(data => {
+// // Repeating for each
+// const bouton2 = document.querySelector('#bouton2');
+// bouton2.addEventListener('click', function(){
+//     fetch('https://www.tbads.eu/greta/kercode/ajax/?article=2')
+//         .then(response => response.json())
+//         .then(data => {
                 
-                titre.innerHTML = data.title
-                date.innerHTML = `${data.date.day} ${data.date.month} ${data.date.year}`;
-                description.innerHTML = data.content[0];
-                description2.innerHTML = data.content[1];
-                description3.innerHTML = data.content[2];
-                description4.innerHTML = data.content[3];
-                image1.src = data.picture;
-                image1.innerHTML 
+//                 titre.innerHTML = data.title
+//                 date.innerHTML = `${data.date.day} ${data.date.month} ${data.date.year}`;
+//                 description.innerHTML = data.content[0];
+//                 description2.innerHTML = data.content[1];
+//                 description3.innerHTML = data.content[2];
+//                 description4.innerHTML = data.content[3];
+//                 image1.src = data.picture;
+//                 image1.innerHTML 
                 
-                titleNwStyle();
-        })
-        .catch(error => {
-                console.log(error);
+//                 titleNwStyle();
+//         })
+//         .catch(error => {
+//                 console.log(error);
                 
-                });
-});
+//                 });
+// });
 
+
+
+
+
+
+
+
+
+
+
+                                // CODE FACTORISER
+
+
+
+
+
+
+
+function getData(articleId) {
+        return fetch(`https://www.tbads.eu/greta/kercode/ajax/?article=${articleId}`)
+            .then(response => response.json())
+    }
+    
+    // Chargement de la page
+    document.addEventListener('DOMContentLoaded', function(){
+        getData(1)
+            .then(data => {
+                h5News1.innerHTML= data.title;
+                NewP1.innerHTML= `Date : ${data.date.day} ${data.date.month} ${data.date.year}`;
+                NewAuthor.innerHTML= `Auteur : ${data.author.name} ${data.author.surname} ${data.author.position}`;
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        getData(2)
+            .then(data => {
+                h5News2.innerHTML= data.title;
+                NewP2.innerHTML= `Date : ${data.date.day} ${data.date.month} ${data.date.year}`
+                NewAuthor2.innerHTML= `Auteur : ${data.author.name} ${data.author.surname} ${data.author.position}`
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    });
+    
+
+    bouton1.addEventListener('click', function(){
+        getData(1)
+            
+            .then(data => {
+                    
+                    titre.innerHTML = data.title
+                    date.innerHTML = `${data.date.day} ${data.date.month} ${data.date.year}`;
+                    description.innerHTML = data.content[0];
+                    description2.innerHTML = data.content[1];
+                    description3.innerHTML = data.content[2];
+                    image1.src = data.picture;
+                    image1.innerHTML 
+                    titleNwStyle();
+                    
+            })
+            .catch(error => {
+                    console.log(error);
+                    
+                    });
+    });
+
+
+
+    bouton2.addEventListener('click', function(){
+        getData(2)
+            
+            .then(data => {
+                    
+                    titre.innerHTML = data.title
+                    date.innerHTML = `${data.date.day} ${data.date.month} ${data.date.year}`;
+                    description.innerHTML = data.content[0];
+                    description2.innerHTML = data.content[1];
+                    description3.innerHTML = data.content[2];
+                    description4.innerHTML = data.content[3];
+                    image1.src = data.picture;
+                    image1.innerHTML 
+                    
+                    titleNwStyle();
+            })
+            .catch(error => {
+                    console.log(error);
+                    
+                    });
+    });
 // Repeating for each
 
         
