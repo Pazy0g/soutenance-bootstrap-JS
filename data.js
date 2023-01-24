@@ -85,7 +85,7 @@ bouton2.addEventListener('click', function(){
 
         
 
-let italics = document.getElementById('date')
+
 // Style changing function
 function titleNwStyle(){
         // Changing css dynamicly
@@ -99,10 +99,6 @@ function titleNwStyle(){
         titre.onmouseout = function(){
                 this.style.color="red"
         }
-
-        
-
-
 
         image1.style.border="thick solid grey"
 }
