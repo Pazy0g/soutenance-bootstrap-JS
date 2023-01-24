@@ -18,7 +18,7 @@
 <body>
 
     <!-- header & nav -->
-    <header class="container pb-4">
+    <header class="container pb-4" role="banner" aria-roledescription="En-tête">
         <div class="bg-secondary pb-2"></div>
         <div class="text-dark row text-center justify-content-center " role="Title">
             <h2 class="titleDownSize m-3 mt-5">Magazine En Ligne</h2>
@@ -26,7 +26,7 @@
             <h2 class="titleDownSize m-3 mt-5">Nos Meilleures Idées</h2>
         </div>
         <!-- Navigation LG & SM -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light manav mb-5 w-100">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light manav mb-5 w-100" role="navigation">
 
           <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -47,11 +47,11 @@
 
 
         <!-- Main container -->
-    <main class="container pb-5">
+    <main class="container pb-5" role="contentinfo" aria-roledescription="main">
 
 
           <!-- Slider -->
-        <div id="demo" class="carousel slide pb-5" data-ride="carousel">
+        <div id="demo" class="carousel slide pb-5" data-ride="carousel" role="slider">
 
             <!-- Indicators -->
             <ul class="carousel-indicators">
@@ -95,7 +95,7 @@
 
             </div>
 
-            <section class="row-cols-sm-6 row-cols-md-4 row pb-5">
+            <section class="row-cols-sm-6 row-cols-md-4 row pb-5" role="article">
               <div class=" px-2 "  test">
                 <div class="card-body cardcolor">
                   <h4 class="card-title text-center">CHAMBRES</h4>
@@ -130,7 +130,7 @@
             <!-- Second middle section page -->
           <div class="row">
 
-          <section class="groupe row-cols-sm-1">
+          <section class="groupe row-cols-sm-1" role="article">
             <div class="d-flex pb-2">
 
               <div class="indica2 mt-2"></div>
@@ -164,7 +164,7 @@
           </section>
 
              
-          <section class="groupe w-50">
+          <section class="groupe w-50" role="article">
             <article class="mx-3 mt-5">
               <h3 class="text-center text-nowrap h3article">Quelques mots sur notre société</h3>
               <p class="text-wrap pt-1 pb-3">Découvrez notre sélection de meubles <br> contemporains et de mobilier moderne
@@ -182,7 +182,7 @@
             </article>
             </section>
 
-            <section class="groupe w-25 text-center">
+            <section class="groupe w-25 text-center" role="article">
               <a href="#" class="tof" data-toggle="modal" data-target="#myModal"><img src="images/fond-book2.png" alt=""></a>
               <h3 class=" mx-5 h3article">Références</h3>
               
@@ -272,7 +272,7 @@
     </main>
 
       <!-- Footer -->
-    <footer class="container">
+    <footer class="container" role="contentinfo">
 
       <div class="row justify-content-between">
         <div id="icon">
