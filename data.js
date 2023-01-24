@@ -13,11 +13,6 @@ const bouton1 = document.querySelector('#bouton1');
 let h5News2 = document.getElementById('montitre2')
 let NewP2 = document.getElementById('MyNewP2')
 let NewAuthor2 = document.getElementById('MyNewAutor2')
-
-
-
-
-
                         //CODE NON FACTORISER
 
 // document.addEventListener('DOMContentLoaded', function(){
@@ -97,28 +92,14 @@ let NewAuthor2 = document.getElementById('MyNewAutor2')
                 
 //                 });
 // });
-
-
-
-
-
-
-
-
-
-
-
                                 // CODE FACTORISER
-
-
-
-
-
-
 
 function getData(articleId) {
         return fetch(`https://www.tbads.eu/greta/kercode/ajax/?article=${articleId}`)
             .then(response => response.json())
+            .catch(error => {
+                console.log(error);
+            })
     }
     
     // Chargement de la page
@@ -129,21 +110,16 @@ function getData(articleId) {
                 NewP1.innerHTML= `Date : ${data.date.day} ${data.date.month} ${data.date.year}`;
                 NewAuthor.innerHTML= `Auteur : ${data.author.name} ${data.author.surname} ${data.author.position}`;
             })
-            .catch(error => {
-                console.log(error);
-            });
+           
         getData(2)
             .then(data => {
                 h5News2.innerHTML= data.title;
                 NewP2.innerHTML= `Date : ${data.date.day} ${data.date.month} ${data.date.year}`
                 NewAuthor2.innerHTML= `Auteur : ${data.author.name} ${data.author.surname} ${data.author.position}`
             })
-            .catch(error => {
-                console.log(error);
-            });
+            
     });
     
-
     bouton1.addEventListener('click', function(){
         getData(1)
             
@@ -159,13 +135,7 @@ function getData(articleId) {
                     titleNwStyle();
                     
             })
-            .catch(error => {
-                    console.log(error);
-                    
-                    });
     });
-
-
 
     bouton2.addEventListener('click', function(){
         getData(2)
@@ -183,15 +153,7 @@ function getData(articleId) {
                     
                     titleNwStyle();
             })
-            .catch(error => {
-                    console.log(error);
-                    
-                    });
     });
-// Repeating for each
-
-        
-
 
 // Style changing function
 function titleNwStyle(){
@@ -209,9 +171,6 @@ function titleNwStyle(){
 
         image1.style.border="thick solid grey"
 }
-
-
-
 
 // Selecting body element
 const body = document.querySelector("body");
@@ -232,35 +191,32 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-
-
-// var for the catalog
 let submit = document.getElementById('submitButton');
 let label = document.getElementById('labelCheck');
 let acceptance = document.getElementById('myCheck');
+let check = document.getElementById('myCheck');
+
 // Function for the catalog subing
 acceptance.addEventListener("change", function() {
+if (this.checked) {
+label.style.color = "green";
+submit.style.display = "block";
+} else {
+label.style.color = "red";
+submit.style.display = "none";
+}
+});
+let mail 
+check.addEventListener('click', function() {
+ mail = document.getElementById('mail').value;
+let responsePb = document.getElementById('researchPb');
+if (mail.length < 5) {
+responsePb.innerHTML = "Votre email doit comporter au moins 5 Caractères";
+submit.style.visibility = "hidden";
 
-
-
-        if(this.checked) {
-               
-          label.style.color ="green";
-         
-          
-        } 
-
-        if(this.checked == false){
-                label.style.color="red";
-        }
-         if (this.checked === true){
-                submit.style.display="block";
-                submit.style.display
-        }
-
-        if(this.checked === false){
-                submit.style.display=""
-        }
-      });
-
-
+}
+else {
+responsePb.innerHTML="";
+submit.style.visibility = "visible";
+}
+});

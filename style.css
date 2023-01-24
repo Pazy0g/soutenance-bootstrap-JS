@@ -6,18 +6,7 @@
          url('fonts/antipasto-pro-extrabold-trial-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
-
-@font-face {
-    font-family: 'antipasto_proextralight';
-    src: url('fonts/antipasto-pro-extralight-trial-webfont.woff2') format('woff2'),
-         url('fonts/antipasto-pro-extralight-trial-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
 @font-face {
     font-family: 'antipasto_pro_regular';
     src: url('fonts/antipasto-pro-regular-trial-webfont.woff2') format('woff2'),
@@ -113,11 +102,5 @@ h4{
 
 #submitButton{
     display:none;
-}
-
-
-@media screen and (min-width: 760px) {
-    #demo{
-        display: none;
-    }
+    
 }
