@@ -25,9 +25,14 @@ document.addEventListener('DOMContentLoaded', function(){
         .then(response => response.json())
         .then(data => {
                 h5News1.innerHTML= data.title;
-                NewP1.innerHTML= `Date : ${data.date.day} ${data.date.month} ${data.date.year}`
-                NewAuthor.innerHTML= `Auteur : ${data.author.name} ${data.author.surname} ${data.author.position}`
-        });
+                NewP1.innerHTML= `Date : ${data.date.day} ${data.date.month} ${data.date.year}`;
+                NewAuthor.innerHTML= `Auteur : ${data.author.name} ${data.author.surname} ${data.author.position}`;
+        })
+        .catch(error => {
+                console.log(error);
+                
+                });
+       
 });
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -37,7 +42,11 @@ document.addEventListener('DOMContentLoaded', function(){
                 h5News2.innerHTML= data.title;
                 NewP2.innerHTML= `Date : ${data.date.day} ${data.date.month} ${data.date.year}`
                 NewAuthor2.innerHTML= `Auteur : ${data.author.name} ${data.author.surname} ${data.author.position}`
-        });
+        })
+        .catch(error => {
+                console.log(error);
+                
+                });
 });
 
         
@@ -58,7 +67,11 @@ bouton1.addEventListener('click', function(){
                 image1.src = data.picture;
                 image1.innerHTML 
                 titleNwStyle();
-        });
+        })
+        .catch(error => {
+                console.log(error);
+                
+                });
 });
 
 // Repeating for each
@@ -78,7 +91,11 @@ bouton2.addEventListener('click', function(){
                 image1.innerHTML 
                 
                 titleNwStyle();
-        });
+        })
+        .catch(error => {
+                console.log(error);
+                
+                });
 });
 
 // Repeating for each
